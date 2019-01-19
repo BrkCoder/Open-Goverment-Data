@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server": "node server/index.js",
-    "server-watch": "nodemon server/index.js"
+    "server-watch": "nodemon server/index.js",
+    "server-stop": "killall node"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,6 @@
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.9"
-  }
+  },
+  "devDependencies": {}
 }
