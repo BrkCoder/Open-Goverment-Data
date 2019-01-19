@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server": "node server/index.js",
-    "server-watch": "nodemon server/index.js"
+    "server-watch": "nodemon server/index.js",
+    "server-stop": "killall node"
   },
   "repository": {
     "type": "git",
