@@ -1,4 +1,7 @@
 # transportation-visualization
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1ef8844633b3495083cbee8d84fc9c51)](https://app.codacy.com/app/baribarakinbal/transportation-visualization?utm_source=github.com&utm_medium=referral&utm_content=BrkCoder/transportation-visualization&utm_campaign=Badge_Grade_Dashboard)
+
 open transportation visualization
 ## Basic Requirements
 Install Python : <https://www.python.org/>
