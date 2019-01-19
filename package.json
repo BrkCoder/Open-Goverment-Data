@@ -1,0 +1,30 @@
+{
+  "name": "transportation-visualization",
+  "version": "1.0.0",
+  "description": "transportation visualization web app",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server/index.js",
+    "server-watch": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrkCoder/transportation-visualization.git"
+  },
+  "keywords": [
+    "transportation",
+    "visualization"
+  ],
+  "author": "Barak Inbal & Ronen Robinov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrkCoder/transportation-visualization/issues"
+  },
+  "homepage": "https://github.com/BrkCoder/transportation-visualization#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.9"
+  }
+}
