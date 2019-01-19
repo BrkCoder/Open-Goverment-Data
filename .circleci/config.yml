@@ -34,7 +34,3 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run server!
-      - run: npm run server
-      - run: npm run stop-server
