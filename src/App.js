@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Map from "./map/Map";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <main className='Map-container'>
+                    <Map
+                        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                        loadingElement={<div style={{height: `100%`}}/>}
+                        containerElement={<div style={{height: `100%`}}/>}
+                        mapElement={<div style={{height: `100%`}}/>}
+                        defaultZoom={15}
+                        defaultCenter={{lat: -34.397, lng: 150.644}}
+                    />
+                </main>
+            </div>
+        );
+    }
 }
 
 export default App;
