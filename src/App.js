@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "./App.css";
+import "./App.scss";
 import Map from "./map/Map";
 
 class App extends Component {
@@ -7,6 +7,7 @@ class App extends Component {
         return (
             <div className="App">
                 <main className='Map-container'>
+                    <div><h1>Ronen Rubinov</h1></div>
                     <Map
                         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
                         loadingElement={<div style={{height: "100%"}}/>}
@@ -16,7 +17,11 @@ class App extends Component {
                         defaultCenter={{lat: -34.397, lng: 150.644}}
                     />
                 </main>
+
+
             </div>
+
+
         );
     }
 }
