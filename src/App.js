@@ -1,13 +1,16 @@
+// @flow
 import React, {Component} from "react";
 import "./App.scss";
 import Map from "./map/Map";
 
-class App extends Component {
+type Props = {};
+type State ={};
+class App extends Component<Props,State> {
     render() {
         return (
             <div className="App">
-                <main className='Map-container'>
-                    <div><h1>Ronen Rubinov</h1></div>
+                <h1>OpenGovData(OGD)</h1>
+                <main className='container'>
                     <Map
                         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
                         loadingElement={<div style={{height: "100%"}}/>}
@@ -17,11 +20,7 @@ class App extends Component {
                         defaultCenter={{lat: -34.397, lng: 150.644}}
                     />
                 </main>
-
-
             </div>
-
-
         );
     }
 }
