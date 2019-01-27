@@ -9,7 +9,7 @@ class App extends Component<Props,State> {
     render() {
         return (
             <div className="App">
-                <h1>Barak Inbal & Ronen Rubinov</h1>
+                <h1>OpenGovData(OGD)</h1>
                 <main className='container'>
                     <Map
                         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"

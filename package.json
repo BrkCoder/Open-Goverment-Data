@@ -4,24 +4,31 @@
   "private": false,
   "author": "Barak Inbal & Ronen Robinov",
   "license": "MIT",
+  "scripts": {
+    "start": "flow && react-scripts start",
+    "build": "flow && react-scripts build",
+    "test": "flow && react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "node server/index.js",
+    "flow": "flow",
+    "postinstall": "flow-typed install"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
-    "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-google-maps": "^9.4.5",
-    "react-scripts": "2.1.3"
+    "react-scripts": "^2.1.3",
+    "node-sass": "^4.11.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "node server/index.js",
-    "flow": "flow"
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.91.0",
+    "flow-typed": "^2.5.1"
   },
   "repository": {
     "type": "git",
@@ -43,11 +50,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-flow": "^6.23.0",
-    "flow-bin": "^0.91.0",
-    "flow-typed": "^2.5.1"
-  }
+  ]
 }
