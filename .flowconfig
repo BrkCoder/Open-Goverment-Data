@@ -1,0 +1,15 @@
+[ignore]
+.*/node_modules/*
+.*/build/*
+
+[include]
+
+[libs]
+./src/types/global.js
+[lints]
+
+[options]
+module.name_mapper='^\(.*\)\.scss$' -> 'CSSModule'
+module.system=haste
+
+[strict]
