@@ -1,8 +1,12 @@
+// @flow
 import React from "react";
 import {withScriptjs, withGoogleMap, GoogleMap} from "react-google-maps";
 import "./Map.css";
-
-const Map = withScriptjs(withGoogleMap((props) =>
+type Props = {
+    defaultZoom: number,
+    defaultCenter: { lat: number, lng: number}
+};
+const Map = withScriptjs(withGoogleMap((props:Props) =>
     <GoogleMap
         defaultZoom={props.defaultZoom}
         defaultCenter={props.defaultCenter}>
