@@ -5,7 +5,7 @@
   "author": "Barak Inbal & Ronen Robinov",
   "license": "MIT",
   "scripts": {
-    "start": "set \"REACT_APP_GOOGLE_MAP_KEY=AIzaSyAFr7z43sRFL8lGihjdtc2cDLE-eR3PzY0\" && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

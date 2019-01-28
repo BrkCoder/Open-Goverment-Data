@@ -1,0 +1,73 @@
+.container{
+    display: inline-block;
+    height: 80%;
+    width: 50%;
+    padding: 1.5rem;
+    background: whitesmoke;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    border-radius: 1rem;
+    .icon{
+        font-size: 3rem;
+        position: absolute;
+        top: -5rem;
+        left: 50%;
+        color: whitesmoke;
+        border: 5px solid black;
+        border-radius: 2.5rem;
+        padding: 1rem;
+
+    }
+}
+
+.tooltip-content{
+    direction: rtl;
+    .images{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 2rem;
+      color: dodgerblue;
+      .icon-bounce {
+        cursor: pointer;
+        transition: 0.5 height ease-out; 
+        &:hover{
+            animation: bounce .5s infinite alternate;
+            transform: translateY(4px);
+        }
+      }
+
+      .icon-spin{
+        cursor: pointer;
+        transition: 0.5 all ease-out; 
+        &:hover{
+            animation: rotate .5s infinite alternate;
+        }
+      }
+    }
+    .description{
+      width: 100%;
+      .key{
+        font-weight: bold;
+      }
+    }
+}
+
+  @keyframes bounce {
+    from {
+      transform: translateY(4px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes rotate {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(90deg);
+    }
+  }
