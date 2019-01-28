@@ -28,11 +28,8 @@ class App extends Component<Props, State> {
 
     createMarkers() {
         (new APIUtils()).getCameras().then(({data}) => {
-            if (data) {
-                const {cameras} = data;
-                if (Array.isArray(cameras) && cameras.length) {
-                    this.setState({cameras});
-                }
+            if (data && Array.isArray(data.cameras)) {
+                this.setState({cameras: data.cameras});
             }
         })
     }
@@ -42,9 +39,33 @@ class App extends Component<Props, State> {
     }
 
     render() {
-        const {cameras, openMarkers} = this.state;
+        const googleMapURL = [
+            `https://maps.googleapis.com/maps/api/js?key=`,
+            process.env.REACT_APP_GOOGLE_MAP_KEY,
+            `&v=3.exp&libraries=geometry,drawing,places`
+        ].join('');
 
-        const markers = cameras.map(({Latitude, Longitude, ...rest}) => {
+        return (
+            <div className="App">
+                <h1>OpenGovData(OGD)</h1>
+                <main className='container'>
+                    <Map
+                        googleMapURL="{googleMapURL}"
+                        loadingElement={<div style={{height: "100%"}}/>}
+                        containerElement={<div style={{height: "100%"}}/>}
+                        mapElement={<div style={{height: "100%"}}/>}
+                        defaultZoom={9}
+                        defaultCenter={{lat: 31.790183, lng: 34.654383}}
+                        markers={this.getMarkers(this.state)}
+                    />
+                </main>
+            </div>
+        );
+    }
+
+    getMarkers(state) {
+        const {cameras, openMarkers} = state;
+        return cameras.map(({Latitude, Longitude, ...rest}) => {
             const key = Object.values(rest).shift();
             return (
                 <Marker position={{lat: Latitude, lng: Longitude}} defaultIcon={camera} key={key}
@@ -57,8 +78,9 @@ class App extends Component<Props, State> {
                                 <span title='קבע נקודת ציון'><FiMapPin className='icon-bounce'/></span>
                                 <span title='נווט'><FiNavigation className='icon-spin'/></span>
                             </div>
-                            <div className='description'> {Object.keys(rest).map((key) =>
-                                <p key={key}><span className='key'> {key} </span> : {rest[key]}</p>)}
+                            <div className='description'>
+                                {Object.keys(rest).map((key) =>
+                                    <p key={key}><span className='key'>{key}</span>:{rest[key]}</p>)}
                             </div>
                         </div>
                     </InfoWindow>
@@ -66,23 +88,6 @@ class App extends Component<Props, State> {
                 </Marker>
             )
         });
-
-        return (
-            <div className="App">
-                <h1>OpenGovData(OGD)</h1>
-                <main className='container'>
-                    <Map
-                        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFr7z43sRFL8lGihjdtc2cDLE-eR3PzY0&v=3.exp&libraries=geometry,drawing,places"
-                        loadingElement={<div style={{height: "100%"}}/>}
-                        containerElement={<div style={{height: "100%"}}/>}
-                        mapElement={<div style={{height: "100%"}}/>}
-                        defaultZoom={9}
-                        defaultCenter={{lat: 31.790183, lng: 34.654383}}
-                        markers={markers}
-                    />
-                </main>
-            </div>
-        );
     }
 }
 
