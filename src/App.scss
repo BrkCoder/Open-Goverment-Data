@@ -31,6 +31,50 @@ body{
     flex:1;
   }
 
+  .tooltip-content{
+    direction: rtl;
+    .images{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 2rem;
+      color: dodgerblue;
+      .icon-bounce {
+        cursor: pointer;
+        animation: bounce .5s infinite alternate;
+        -webkit-animation: bounce .5s infinite alternate;
+        transform: translateY(4px);
+      }
+
+      .icon-spin{
+        cursor: pointer;
+        transform:rotate(90deg);
+      }
+    }
+    .description{
+      width: 100%;
+      .key{
+        font-weight: bold;
+      }
+    }
+  }
+
+  @keyframes bounce {
+    from {
+      transform: translateY(4px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(4px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
 }
 
 
