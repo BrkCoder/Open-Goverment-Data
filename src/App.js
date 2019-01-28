@@ -50,7 +50,7 @@ class App extends Component<Props, State> {
                 <h1>OpenGovData(OGD)</h1>
                 <main className='container'>
                     <Map
-                        googleMapURL="{googleMapURL}"
+                        googleMapURL={googleMapURL}
                         loadingElement={<div style={{height: "100%"}}/>}
                         containerElement={<div style={{height: "100%"}}/>}
                         mapElement={<div style={{height: "100%"}}/>}
