@@ -14,6 +14,8 @@
     "postinstall": "flow-typed install"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.1",
+    "@material-ui/icons": "^3.0.2",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
@@ -24,7 +26,8 @@
     "react-dom": "^16.7.0",
     "react-google-maps": "^9.4.5",
     "react-icons": "^3.3.0",
-    "react-scripts": "^2.1.3"
+    "react-scripts": "^2.1.3",
+    "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -51,6 +54,6 @@
     ">0.2%",
     "not dead",
     "not ie <= 11",
-    "not op_mini all"
+    "not otypeface-robotop_mini all"
   ]
 }
