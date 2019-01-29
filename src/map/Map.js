@@ -77,9 +77,12 @@ class Map extends Component<Props, State> {
                                 <span title='נווט'><FiNavigation className='icon-spin'/></span>
                             </div>
                             <div className='description'>
-                                {Object.keys(rest).map((key) =>{
-                                        const value = rest[key];
-                                        return <p key={key}><span className='key'>{key}</span>:{value}</p>
+                                {Object.keys(rest).map((key) => {
+                                        if(rest.hasOwnProperty(key)){
+                                            return <p key={key}><span className='key'>{key}</span>:{rest[key]}</p>;
+                                        }else{
+                                            return <p></p>;
+                                        }
                                     })
                                 }
                             </div>
