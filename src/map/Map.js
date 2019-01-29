@@ -80,7 +80,7 @@ class Map extends Component<Props, State> {
                                 {Object.keys(rest).map((key) =>{
                                         const value = rest[key];
                                         return <p key={key}><span className='key'>{key}</span>:{value}</p>
-                                    });
+                                    })
                                 }
                             </div>
                         </div>
