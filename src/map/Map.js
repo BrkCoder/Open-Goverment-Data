@@ -42,7 +42,7 @@ class Map extends Component<Props, State> {
     render() {
         const googleMapURL = [
             "https://maps.googleapis.com/maps/api/js?key=",
-            "API-KEY",
+            "AIzaSyCSDYheNCQaL2cw5nkxuyH6zMua-VFGuWg",
             "&v=3.exp&libraries=geometry,drawing,places"
         ].join("");
 
@@ -71,14 +71,14 @@ class Map extends Component<Props, State> {
                     {openMarkers[key] &&
                     <InfoWindow position={{lat: Latitude, lng: Longitude}}
                                 onCloseClick={() => this.toggleMarker(key)}>
-                        <div className='tooltip-content'>
-                            <div className='images'>
+                        <div className="tooltip">
+                            <div className='icons'>
                                 <span title='קבע נקודת ציון'><FiMapPin className='icon-bounce'/></span>
                                 <span title='נווט'><FiNavigation className='icon-spin'/></span>
                             </div>
                             <div className='description'>
-                                {Object.keys(Object.seal(rest)).map((key) => {
-                                        return <p key={key}><span className='key'>{key}</span>:{rest[key]}</p>;
+                                {Object.keys(rest).map((key) => {
+                                        return <p key={key}><span className='title'>{key}</span>:{rest[key]}</p>;
                                     })
                                 }
                             </div>

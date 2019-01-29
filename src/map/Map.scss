@@ -21,9 +21,9 @@
     }
 }
 
-.tooltip-content{
+.tooltip{
     direction: rtl;
-    .images{
+    .icons{
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -48,7 +48,7 @@
     }
     .description{
       width: 100%;
-      .key{
+      .title{
         font-weight: bold;
       }
     }
