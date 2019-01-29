@@ -44,7 +44,7 @@ class Map extends Component<Props, State> {
             "https://maps.googleapis.com/maps/api/js?key=",
             "API-KEY",
             "&v=3.exp&libraries=geometry,drawing,places"
-        ].join('');
+        ].join("");
 
         return (
                 <div className="container">
@@ -77,12 +77,8 @@ class Map extends Component<Props, State> {
                                 <span title='נווט'><FiNavigation className='icon-spin'/></span>
                             </div>
                             <div className='description'>
-                                {Object.keys(rest).map((key) => {
-                                        if(rest.hasOwnProperty(key)){
-                                            return <p key={key}><span className='key'>{key}</span>:{rest[key]}</p>;
-                                        }else{
-                                            return <p></p>;
-                                        }
+                                {Object.keys(Object.seal(rest)).map((key) => {
+                                        return <p key={key}><span className='key'>{key}</span>:{rest[key]}</p>;
                                     })
                                 }
                             </div>
