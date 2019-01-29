@@ -1,11 +1,11 @@
 // @flow
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {Marker, InfoWindow} from "react-google-maps";
 import camera from "../camera.png";
-import {FiMapPin, FiNavigation} from 'react-icons/fi';
-import APIUtils from '../common/APIUtils';
-import GMap from '../gmap/GMap';
-import './Map.scss';
+import {FiMapPin, FiNavigation} from "react-icons/fi";
+import APIUtils from "../common/APIUtils";
+import GMap from "../gmap/GMap";
+import "./Map.scss";
 
 type Props = {};
 type State = {
@@ -19,7 +19,7 @@ class Map extends Component<Props, State> {
         this.state = {
             openMarkers: {},
             cameras: []
-        }
+        };
     }
 
     componentDidMount() {
@@ -31,22 +31,23 @@ class Map extends Component<Props, State> {
             if (data && Array.isArray(data.cameras)) {
                 this.setState({cameras: data.cameras});
             }
-        })
+        });
     }
 
     toggleMarker(key) {
-        this.setState({openMarkers: {...this.state.openMarkers, [key]: !this.state.openMarkers[key]}});
+        const value = !this.state.openMarkers[key];
+        this.setState({openMarkers: {...this.state.openMarkers, [key]: value}});
     }
 
     render() {
         const googleMapURL = [
-            `https://maps.googleapis.com/maps/api/js?key=`,
-            'AIzaSyCSDYheNCQaL2cw5nkxuyH6zMua-VFGuWg',
-            `&v=3.exp&libraries=geometry,drawing,places`
+            "https://maps.googleapis.com/maps/api/js?key=",
+            "API-KEY",
+            "&v=3.exp&libraries=geometry,drawing,places"
         ].join('');
 
         return (
-                <div className='container'>
+                <div className="container">
                     <GMap
                         googleMapURL={googleMapURL}
                         loadingElement={<div style={{height: "100%"}}/>}
@@ -76,14 +77,17 @@ class Map extends Component<Props, State> {
                                 <span title='נווט'><FiNavigation className='icon-spin'/></span>
                             </div>
                             <div className='description'>
-                                {Object.keys(rest).map((key) =>
-                                    <p key={key}><span className='key'>{key}</span>:{rest[key]}</p>)}
+                                {Object.keys(rest).map((key) =>{
+                                        const value = rest[key];
+                                        return <p key={key}><span className='key'>{key}</span>:{value}</p>
+                                    });
+                                }
                             </div>
                         </div>
                     </InfoWindow>
                     }
                 </Marker>
-            )
+            );
         });
     }
 }
