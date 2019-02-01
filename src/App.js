@@ -28,6 +28,9 @@ class App extends Component<Props, State> {
                 <main className='main'>
                     <Menu toggleSideMenu={this.toggleSideMenu}/>
                     <Sidemenu open={this.state.sideMenu} toggleSideMenu={this.toggleSideMenu}/>
+                    <div className="content">
+                        <Map/>
+                    </div>
                 </main>
             </div>
         );
