@@ -3,18 +3,18 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import Icon from "@material-ui/core/Icon";
+import Divider from "@material-ui/core/Divider";
 
 type Props = {
   open: boolean,
   toggleSideMenu: any
 };
-type State = {};
+type State = {
+  categories: {label: string, icon: string}[]
+};
 const styles = {
   list: {
     width: 250,
@@ -22,6 +22,13 @@ const styles = {
 };
 
 class Sidemenu extends Component<Props, State> {
+
+    constructor(props) {
+        super(props);
+        this.state = { 
+          categories: this.getCategories()
+        };
+    }
 
     render() {
         const sideList = this.getSideList();
@@ -42,24 +49,45 @@ class Sidemenu extends Component<Props, State> {
       return (
           <div className={classes.list}>
             <List>
-              {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-                <ListItem button key={text}>
-                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
-              ))}
-            </List>
-            <Divider />
-            <List>
-              {["All mail", "Trash", "Spam"].map((text, index) => (
-                <ListItem button key={text}>
-                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                  <ListItemText primary={text} />
+              <ListItem key={"Topics"}>
+                  <Icon>format_list_bulleted</Icon>
+                  <ListItemText primary={"Topics"} />
+              </ListItem>
+              <Divider/>
+              {this.state.categories.map(({label,icon}, index) => (
+                <ListItem button key={label}>
+                  <Icon>{icon}</Icon>
+                  <ListItemText primary={label} />
                 </ListItem>
               ))}
             </List>
           </div>
         );
+    }
+
+    getCategories(){
+      return [
+        {
+          label: "Transportation",
+          icon: "commute"
+        },
+        {
+          label: "Law and justice",
+          icon: "gavel"
+        },
+        {
+          label: "Environment",
+          icon: "local_florist"
+        },
+        {
+          label: "Economics",
+          icon: "attach_money"
+        },
+        {
+          label: "Tourism",
+          icon: "flight_takeoff"
+        }
+      ]
     }
 }
 
