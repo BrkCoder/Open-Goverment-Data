@@ -2,8 +2,9 @@
 import React, {Component} from "react";
 import "./App.scss";
 import Map from "./map/Map";
-import Menu from './menu/Menu';
-import Sidemenu from './sidemenu/Sidemenu';
+import Menu from "./menu/Menu";
+import Sidemenu from "./sidemenu/Sidemenu";
+
 type Props = {};
 type State = {
     sideMenu: boolean;
@@ -18,7 +19,7 @@ class App extends Component<Props, State> {
         }
         this.toggleSideMenu = () => {
             this.setState({ sideMenu: !this.state.sideMenu});
-        }
+        };
     }
 
     render() {
