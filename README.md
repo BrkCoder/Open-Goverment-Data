@@ -2,7 +2,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1ef8844633b3495083cbee8d84fc9c51)](https://app.codacy.com/app/baribarakinbal/transportation-visualization?utm_source=github.com&utm_medium=referral&utm_content=BrkCoder/transportation-visualization&utm_campaign=Badge_Grade_Dashboard)
 
 ## Trello
-[https://trello.com/b/0lJ2V3Cu/open-gov-dataogd]
+Open [Trello](https://trello.com/b/0lJ2V3Cu/open-gov-dataogd) to view the current missions of this project.
 
 ## Available Scripts
 
