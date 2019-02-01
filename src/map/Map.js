@@ -42,7 +42,7 @@ class Map extends Component<Props, State> {
     render() {
         const googleMapURL = [
             "https://maps.googleapis.com/maps/api/js?key=",
-            "AIzaSyCSDYheNCQaL2cw5nkxuyH6zMua-VFGuWg",
+            "API_KEY",
             "&v=3.exp&libraries=geometry,drawing,places"
         ].join("");
 
