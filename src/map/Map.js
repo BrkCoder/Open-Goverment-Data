@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from "react";
 import {Marker, InfoWindow} from "react-google-maps";
-import camera from "../images/cctv.png";
+import camera from "../assets/images/camera.png"
 import {FiMapPin, FiNavigation} from "react-icons/fi";
 import APIUtils from "../common/APIUtils";
 import GMap from "../gmap/GMap";
@@ -42,7 +42,7 @@ class Map extends Component<Props, State> {
     render() {
         const googleMapURL = [
             "https://maps.googleapis.com/maps/api/js?key=",
-            "API_KEY",
+            "AIzaSyCSDYheNCQaL2cw5nkxuyH6zMua-VFGuWg",
             "&v=3.exp&libraries=geometry,drawing,places"
         ].join("");
 
