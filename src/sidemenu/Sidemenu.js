@@ -87,7 +87,7 @@ class Sidemenu extends Component<Props, State> {
           label: "Tourism",
           icon: "flight_takeoff"
         }
-      ]
+      ];
     }
 }
 
