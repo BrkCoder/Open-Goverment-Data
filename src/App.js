@@ -16,7 +16,7 @@ class App extends Component<Props, State> {
         super(props);
         this.state = {
             sideMenu: false
-        }
+        };
         this.toggleSideMenu = () => {
             this.setState({ sideMenu: !this.state.sideMenu});
         };

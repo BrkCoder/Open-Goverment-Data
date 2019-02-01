@@ -14,6 +14,7 @@ type Props = {
   open: boolean,
   toggleSideMenu: any
 };
+type State = {};
 const styles = {
   list: {
     width: 250,

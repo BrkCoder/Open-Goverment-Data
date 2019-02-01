@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from "react";
 import {Marker, InfoWindow} from "react-google-maps";
-import camera from "../assets/images/camera.png"
+import camera from "../assets/images/camera.png";
 import {FiMapPin, FiNavigation} from "react-icons/fi";
 import APIUtils from "../common/APIUtils";
 import GMap from "../gmap/GMap";
