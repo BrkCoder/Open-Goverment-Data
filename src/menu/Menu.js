@@ -15,19 +15,26 @@ const styles = (theme) => ({
   root: {
     width: "100%",
   },
+  appBar: {
+    backgroundColor: "#5BA6CF"
+  },
   grow: {
     flexGrow: 1,
   },
   menuButton: {
     marginLeft: 0,
     marginRight: 0,
+    color: theme.palette.common.black
   },
   publicIcon: {
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
+    color: theme.palette.common.black,
+    fontSize: "1.5rem"
   },
   title: {
     display: "none",
+    color: theme.palette.common.black,
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },
@@ -54,6 +61,7 @@ const styles = (theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    color: theme.palette.common.black
   },
   inputRoot: {
     color: "inherit",
@@ -72,6 +80,7 @@ const styles = (theme) => ({
         width: 200,
       },
     },
+    color: theme.palette.common.black
   },
 });
 
@@ -79,13 +88,13 @@ function Menu(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer" onClick={props.toggleSideMenu}>
             <MenuIcon />
           </IconButton>
           <PublicIcon className={classes.publicIcon}></PublicIcon>
-          <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+          <Typography className={classes.title} variant="h5" color="inherit" noWrap>
             Open Goverment Data
           </Typography>
           <div className={classes.grow} />

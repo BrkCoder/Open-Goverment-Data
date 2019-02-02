@@ -29,7 +29,7 @@ class App extends Component<Props, State> {
                     <Menu toggleSideMenu={this.toggleSideMenu}/>
                     <Sidemenu open={this.state.sideMenu} toggleSideMenu={this.toggleSideMenu}/>
                     <div className="content">
-                        <Map/>
+                        {/* <Map/> */}
                     </div>
                 </main>
             </div>
