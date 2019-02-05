@@ -1,9 +1,11 @@
 // @flow
 import React, {Component} from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.scss";
-import Map from "./map/Map";
 import Menu from "./menu/Menu";
-import Sidemenu from "./sidemenu/Sidemenu";
+import SideMenu from "./sidemenu/Sidemenu";
+import Home from "./home/Home";
+import Transportation from "./transportation/Transportation";
 
 type Props = {};
 type State = {
@@ -24,15 +26,18 @@ class App extends Component<Props, State> {
 
     render() {
         return (
-            <div className="App">
-                <main className='main'>
-                    <Menu toggleSideMenu={this.toggleSideMenu}/>
-                    <Sidemenu open={this.state.sideMenu} toggleSideMenu={this.toggleSideMenu}/>
-                    <div className="content">
-                        {/* <Map/> */}
-                    </div>
-                </main>
-            </div>
+            <Router>
+                <div className="App">
+                    <main className='main'>
+                        <Menu toggleSideMenu={this.toggleSideMenu}/>
+                        <SideMenu open={this.state.sideMenu} toggleSideMenu={this.toggleSideMenu}/>
+                        <div className="content">
+                            <Route exact path="/" component={Home} />
+                            <Route path="/transportation" component={Transportation} />
+                        </div>
+                    </main>
+                </div>
+            </Router>
         );
     }
 }
