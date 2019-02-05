@@ -1,0 +1,158 @@
+{
+  "general_trends": [
+    {
+      "casualties": 31541.0,
+      "cars": 1015.0,
+      "drivers": 1669.0,
+      "fatalities": 525.0,
+      "year": 1990.0
+    },
+    {
+      "casualties": 37838.0,
+      "cars": 1075.0,
+      "drivers": 1802.0,
+      "fatalities": 542.0,
+      "year": 1991.0
+    },
+    {
+      "casualties": 37992.0,
+      "cars": 1176.0,
+      "drivers": 1931.0,
+      "fatalities": 625.0,
+      "year": 1992.0
+    },
+    {
+      "casualties": 36397.0,
+      "cars": 1261.0,
+      "drivers": 2032.0,
+      "fatalities": 633.0,
+      "year": 1993.0
+    },
+    {
+      "casualties": 38524.0,
+      "cars": 1373.0,
+      "drivers": 2114.0,
+      "fatalities": 685.0,
+      "year": 1994.0
+    },
+    {
+      "casualties": 46534.0,
+      "cars": 1459.0,
+      "drivers": 2222.0,
+      "fatalities": 709.0,
+      "year": 1995.0
+    },
+    {
+      "casualties": 47451.0,
+      "cars": 1543.0,
+      "drivers": 2334.0,
+      "fatalities": 601.0,
+      "year": 1996.0
+    },
+    {
+      "casualties": 49290.0,
+      "cars": 1617.0,
+      "drivers": 2408.0,
+      "fatalities": 627.0,
+      "year": 1997.0
+    },
+    {
+      "casualties": 45503.0,
+      "cars": 1675.0,
+      "drivers": 2524.0,
+      "fatalities": 636.0,
+      "year": 1998.0
+    },
+    {
+      "casualties": 40278.0,
+      "cars": 1729.0,
+      "drivers": 2602.0,
+      "fatalities": 549.0,
+      "year": 1999.0
+    },
+    {
+      "casualties": 37589.0,
+      "cars": 1792.0,
+      "drivers": 2680.0,
+      "fatalities": 516.0,
+      "year": 2000.0
+    },
+    {
+      "casualties": 38204.0,
+      "cars": 1914.0,
+      "drivers": 2775.0,
+      "fatalities": 565.0,
+      "year": 2001.0
+    },
+    {
+      "casualties": 37080.0,
+      "cars": 1960.0,
+      "drivers": 2876.0,
+      "fatalities": 548.0,
+      "year": 2002.0
+    },
+    {
+      "casualties": 36919.0,
+      "cars": 1982.0,
+      "drivers": 2962.0,
+      "fatalities": 480.0,
+      "year": 2003.0
+    },
+    {
+      "casualties": 35480.0,
+      "cars": 2038.0,
+      "drivers": 3033.0,
+      "fatalities": 505.0,
+      "year": 2004.0
+    },
+    {
+      "casualties": "NULL",
+      "cars": 2107.0,
+      "drivers": 3116.4,
+      "fatalities": 465.0,
+      "year": 2005.0
+    },
+    {
+      "casualties": "NULL",
+      "cars": 2176.0,
+      "drivers": 3198.0,
+      "fatalities": 439.0,
+      "year": 2006.0
+    },
+    {
+      "casualties": "NULL",
+      "cars": 2283.0,
+      "drivers": 3270.0,
+      "fatalities": 415.0,
+      "year": 2007.0
+    },
+    {
+      "casualties": "NULL",
+      "cars": 2390.0,
+      "drivers": 3363.7,
+      "fatalities": 433.0,
+      "year": 2008.0
+    },
+    {
+      "casualties": "NULL",
+      "cars": 2459.0,
+      "drivers": 3448.0,
+      "fatalities": 346.0,
+      "year": 2009.0
+    },
+    {
+      "casualties": "NULL",
+      "cars": 2566.0,
+      "drivers": 3538.0,
+      "fatalities": 375.0,
+      "year": 2010.0
+    },
+    {
+      "casualties": "NULL",
+      "cars": 2683.0,
+      "drivers": 3630.769,
+      "fatalities": 382.0,
+      "year": 2011.0
+    }
+  ]
+}
