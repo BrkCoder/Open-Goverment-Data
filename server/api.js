@@ -7,7 +7,7 @@ router.get("/api/ping", (req, res) => {
 
 router.get("/api/transportation/general_trends", (req, res) => {
     const json = require("../data/json/general_trends.json");
-    res.send({...json, unit: 'K'});
+    res.send({...json, unit: "K"});
 });
 
 router.get("/api/transportation/cameras", (req, res) => {
