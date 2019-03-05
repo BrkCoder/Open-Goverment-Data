@@ -59,7 +59,7 @@ const styles = {
     }
 };
 
-class Sidemenu extends Component<Props, State> {
+class SideMenu extends Component<Props, State> {
 
     constructor(props) {
         super(props);
@@ -138,8 +138,8 @@ class Sidemenu extends Component<Props, State> {
     }
 }
 
-Sidemenu.propTypes = {
+SideMenu.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Sidemenu);
+export default withStyles(styles)(SideMenu);
