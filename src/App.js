@@ -1,43 +1,47 @@
 // @flow
 import React, {Component} from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import "./App.scss";
-import Menu from "./menu/Menu";
-import SideMenu from "./sidemenu/Sidemenu";
 import Home from "./home/Home";
 import Transportation from "./transportation/Transportation";
+import {AppMenu} from "./menu/AppMenu";
 
 type Props = {};
 type State = {
     sideMenu: boolean;
 };
 
-class App extends Component<Props, State> {
-    
-    constructor(props){
-        super(props);
-        this.state = {
-            sideMenu: false
-        };
-        this.toggleSideMenu = () => {
-            this.setState({ sideMenu: !this.state.sideMenu});
-        };
-    }
+export const ToggleContext = React.createContext();
+
+export class ToggleStore extends React.Component {
+    state = {sideMenu: false};
+    toggleSideMenu = () => this.setState(state => ({sideMenu: !state.sideMenu}));
 
     render() {
         return (
-            <Router>
-                <div className="App">
-                    <main className='main'>
-                        <Menu toggleSideMenu={this.toggleSideMenu}/>
-                        <SideMenu open={this.state.sideMenu} toggleSideMenu={this.toggleSideMenu}/>
-                        <div className="content">
-                            <Route exact path="/" component={Home} />
-                            <Route path="/transportation" component={Transportation} />
-                        </div>
-                    </main>
-                </div>
-            </Router>
+            <ToggleContext.Provider value={{sideMenu: this.state.sideMenu, toggleSideMenu: this.toggleSideMenu}}>
+                {this.props.children}
+            </ToggleContext.Provider>
+        );
+    }
+}
+
+class App extends Component<Props, State> {
+    render() {
+        return (
+            <ToggleStore>
+                <Router>
+                    <div className="App">
+                        <main className='main'>
+                            <AppMenu/>
+                            <div className="content">
+                                <Route exact path="/" component={Home}/>
+                                <Route path="/transportation" component={Transportation}/>
+                            </div>
+                        </main>
+                    </div>
+                </Router>
+            </ToggleStore>
         );
     }
 }
