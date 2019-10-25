@@ -1,12 +1,3 @@
-import React, {Component} from "react";
+import React from 'react';
 
-type Props = {};
-type State = {};
-
-class Home extends Component<Props, State> {
-    render() {
-        return(<h1>Home</h1>);
-    }
-}
-
-export default Home;
+export const Home = () => <h1>Home</h1>;
