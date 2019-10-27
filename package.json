@@ -44,7 +44,10 @@
   },
   "homepage": "https://github.com/BrkCoder/transportation-visualization#readme",
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "quotes": ["error", "single"]
+    }
   },
   "browserslist": [
     ">0.2%",

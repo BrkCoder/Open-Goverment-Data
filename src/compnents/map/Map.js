@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {InfoWindow, Marker} from 'react-google-maps';
-import camera from '../assets/images/camera.png';
+import camera from '../../assets/images/camera.png';
 import {FiMapPin, FiNavigation} from 'react-icons/fi';
-import APIUtils from '../common/utils/APIUtils';
-import GMap from '../common/gmap/GMap';
 import './Map.scss';
+import axios from 'axios';
+import {GMap} from '../gmap/GMap';
+
+const url = process.env.BASE_URL;
 
 class Map extends Component {
   constructor(props) {
@@ -20,7 +22,7 @@ class Map extends Component {
   }
 
   createMarkers() {
-    (new APIUtils()).getCameras().then(({data}) => {
+    axios.get(`${url}/api/cameras`).then(({data}) => {
       if (data && Array.isArray(data.cameras)) {
         this.setState({cameras: data.cameras});
       }
@@ -70,9 +72,8 @@ class Map extends Component {
                 <span title='נווט'><FiNavigation className='icon-spin'/></span>
               </div>
               <div className='description'>
-                {Object.keys(rest).map((key) => {
-                  return <p key={key}><span className='title'>{key}</span>:{rest[key]}</p>;
-                })
+                {
+                  Object.keys(rest).map((key) => <p key={key}><span className='title'>{key}</span>:{rest[key]}</p>)
                 }
               </div>
             </div>

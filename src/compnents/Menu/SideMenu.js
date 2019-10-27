@@ -7,7 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Icon from '@material-ui/core/Icon';
 import Divider from '@material-ui/core/Divider';
-import background from '../assets/images/day-city.jpg';
+import background from '../../assets/images/day-city.jpg';
 import {Link} from 'react-router-dom';
 
 const styles = {
@@ -52,7 +52,7 @@ const styles = {
   }
 };
 
-class SideMenu extends Component<Props, State> {
+class SideMenu extends Component {
 
   constructor(props) {
     super(props);

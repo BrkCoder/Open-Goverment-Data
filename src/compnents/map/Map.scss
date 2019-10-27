@@ -34,7 +34,7 @@
 
     .icon-bounce {
       cursor: pointer;
-      transition: 0.5 height ease-out;
+      transition: 0.5s height ease-out;
 
       &:hover {
         animation: bounce .5s infinite alternate;
@@ -44,7 +44,7 @@
 
     .icon-spin {
       cursor: pointer;
-      transition: 0.5 all ease-out;
+      transition: 0.5s all ease-out;
 
       &:hover {
         animation: rotate .5s infinite alternate;

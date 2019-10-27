@@ -1,7 +1,7 @@
 import React from 'react';
-import {ToggleContext} from '../App';
 import Menu from './Menu';
-import SideMenu from '../SideMenu/SideMenu';
+import SideMenu from './SideMenu';
+import {ToggleContext} from '../../context/toggle/toggleContext';
 
 export const AppMenu = () => {
   const {sideMenu, toggleSideMenu} = React.useContext(ToggleContext);

@@ -1,42 +1,27 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.scss';
-import {Home} from './home/Home';
-import {Transportation} from './transportation/Transportation';
-import {AppMenu} from './menu/AppMenu';
 
-export const ToggleContext = React.createContext();
+import {Home} from './pages/Home';
+import {Transportation} from './pages/Transportation';
 
-export const ToggleStore = ({children}) => {
-  const [state, setState] = React.useState({sideMenu: false});
+import {AppMenu} from './compnents/Menu/AppMenu';
+import {ToggleStore} from './context/toggle/ToggleStore';
 
-  return (
-    <ToggleContext.Provider
-      value={{sideMenu: state.sideMenu, toggleSideMenu: () => setState({sideMenu: !state.sideMenu})}}>
-      {children}
-    </ToggleContext.Provider>
-  );
-};
-
-
-class App extends Component {
-  render() {
-    return (
-      <ToggleStore>
-        <Router>
-          <div className="App">
-            <main className='main'>
-              <AppMenu/>
-              <div className="content">
-                <Route exact path="/" component={Home}/>
-                <Route path="/transportation" component={Transportation}/>
-              </div>
-            </main>
+const App = () => (
+  <ToggleStore>
+    <Router>
+      <div className="app">
+        <main className='main'>
+          <AppMenu/>
+          <div className="content">
+            <Route exact path="/" component={Home}/>
+            <Route path="/transportation" component={Transportation}/>
           </div>
-        </Router>
-      </ToggleStore>
-    );
-  }
-}
+        </main>
+      </div>
+    </Router>
+  </ToggleStore>
+);
 
 export default App;
